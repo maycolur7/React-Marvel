@@ -1,12 +1,15 @@
 import React from 'react'
 import HomeLayout from '../components/home'
+import HandleError from '../../error/containers/handleError'
 
 class Home extends React.Component {
   render() {
     return(
-      <HomeLayout>
-        <h1>Hello</h1>
-      </HomeLayout>
+      <HandleError>
+        <HomeLayout>
+          <h1>Hello</h1>
+        </HomeLayout>
+      </HandleError>
     )
   }
 }
