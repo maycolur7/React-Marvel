@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './heroCard.css'
 
@@ -20,4 +21,3 @@ function HeroCard (props) {
   )
 }
 export default HeroCard
-
