@@ -14,14 +14,17 @@ class Home extends React.Component {
   }
 
   handleSearchService = (query) => {
-    if(query && query !== ' ') {
+    if (query && query !== '' && query !== ' ') {
       serviceApi.searchSuperHero(query)
         .then(results => {
           this.setState({
             results: results
-          })
-          console.log(this.state.results)
         })
+      })
+    } else {
+      this.setState({
+        results: []
+      })
     }
   }
 
@@ -31,7 +34,9 @@ class Home extends React.Component {
         <HomeLayout>
           <Navbar search={this.handleSearchService} />
           <div className="container">
-            <ResultsList results={this.state.results}/>
+            <div className="card-columns">
+              <ResultsList results={this.state.results}/>
+            </div>
           </div>
         </HomeLayout>
       </HandleError>

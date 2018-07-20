@@ -7,7 +7,6 @@ class Navbar extends React.Component {
     super(props)
     this.state = {
       input: HTMLElement,
-      value: ''
     }
   }
 
@@ -18,10 +17,7 @@ class Navbar extends React.Component {
   }
 
   handleInputChanges = (ev) => {
-    this.setState({
-      value: ev.target.value
-    })
-    this.props.search(this.state.value)
+    this.props.search(ev.target.value)
   }
 
   render() {
