@@ -35,13 +35,20 @@ class Home extends React.Component {
         <HomeLayout>
           <Navbar search={this.handleSearchService} />
           <div className="container">
-            <div className="card-columns">
-              <ResultsList results={this.state.results}/>
-            </div>
+            {
+              this.state.results.length > 0 ?
+                <div className="card-columns">
+                  <ResultsList results={this.state.results}/>
+                </div>
+              :
+                <h1 className="text-light text-center">Search a hero!!!</h1>
+            }
           </div>
         </HomeLayout>
       </HandleError>
     )
   }
 }
+
+export default Home
 
