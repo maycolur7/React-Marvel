@@ -5,7 +5,7 @@ import './heroCard.css'
 function HeroCard (props) {
   return (
     <div className="card">
-      <img className="card-img-top" src={`${props.thumbnail.path}.${props.thumbnail.extension}`} alt="Card image cap" />
+      <img className="card-img-top" src={`${props.thumbnail.path}.${props.thumbnail.extension}`} alt={props.name} />
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         {
